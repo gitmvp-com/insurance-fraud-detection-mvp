@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Fraud Detection - MVP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🛡️ Insurance Fraud Detection System</h1>
+            <p>AI-powered fraud detection for health insurance claims</p>
+        </div>
+
+        <!-- Submit Claim Section -->
+        <div class="claim-section">
+            <h2>Submit New Claim</h2>
+            <form id="claim-form">
+                <div class="form-group">
+                    <label for="patient-name">Patient Name:</label>
+                    <input type="text" id="patient-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="claim-amount">Claim Amount ($):</label>
+                    <input type="number" id="claim-amount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="service-type">Service Type:</label>
+                    <select id="service-type" required>
+                        <option value="">Select service...</option>
+                        <option value="Consultation">Consultation</option>
+                        <option value="Surgery">Surgery</option>
+                        <option value="Medication">Medication</option>
+                        <option value="Laboratory Tests">Laboratory Tests</option>
+                        <option value="Imaging">Imaging (X-Ray, MRI, etc.)</option>
+                        <option value="Physical Therapy">Physical Therapy</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="diagnosis">Diagnosis:</label>
+                    <input type="text" id="diagnosis" required>
+                </div>
+                <button type="submit" class="btn-primary">Submit Claim</button>
+            </form>
+        </div>
+
+        <!-- Claims List -->
+        <div class="claims-section">
+            <h2>Recent Claims</h2>
+            <div id="claims-list"></div>
+        </div>
+
+        <!-- Chatbot Section -->
+        <div class="chat-container">
+            <h2>AI Fraud Detection Assistant</h2>
+            <div class="chat-box" id="chat-box">
+                <div class="message llm-message">
+                    <div class="icon">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z'/%3E%3C/svg%3E" alt="AI">
+                    </div>
+                    <div class="message-content">
+                        Hello! I'm your AI fraud detection assistant. I can analyze claims for potential fraud patterns. Try asking me about specific claims or fraud detection insights.
+                    </div>
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" id="user-input" placeholder="Ask about fraud detection or specific claims..." />
+                <button id="send-btn">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234CAF50'%3E%3Cpath d='M2.01 21L23 12 2.01 3 2 10l15 2-15 2z'/%3E%3C/svg%3E" alt="Send" />
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
